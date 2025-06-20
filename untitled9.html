@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Armin</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
+
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background-color: #121212;
+      color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border-radius: 18px;
+      max-width: 430px;
+      width: 100%;
+      padding: 40px 30px;
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+      text-align: center;
+    }
+
+    .avatar {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 25px;
+      border: 2px solid #fff;
+      box-shadow: 0 0 10px #000;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    p.bio {
+      font-size: 1.1rem;
+      color: #bbb;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .about {
+      font-size: 0.95rem;
+      color: #ccc;
+      font-style: italic;
+      margin-bottom: 30px;
+      line-height: 1.7;
+      white-space: pre-wrap;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      color: #fff;
+      font-size: 1.7rem;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .socials a:hover {
+      transform: scale(1.15);
+      color: #ccc;
+    }
+
+    .tooltip {
+      position: relative;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 140px;
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 6px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -70px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 0.8rem;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    #copyMsg {
+      margin-top: 20px;
+      color: #a0ffa0;
+      font-weight: bold;
+      font-size: 0.9rem;
+      min-height: 20px;
+    }
+  </style>
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="card">
+    <img
+      src="https://i.postimg.cc/x8P1ySMP/23631b025175c866a30cd0398e3a9391.jpg"
+      alt="Armin Avatar"
+      class="avatar"
+    />
+    <h1>Hi, I am Armin</h1>
+    <p class="bio">
+      Welcome to my world.  
+      Discover my favorite things and connect with me.
+    </p>
+
+    <div class="about">
+My favorite things: late-night code, silence, overthinking ✮⋆˙  
+In love with <b>A</b> — quietly deeply ᯓᡣ𐭩  
+Always learning, always lowkey disappearing ᶻ 𝗓 𐰁  
+web-<b>ebio.gg/armin</b> ᯓ✦  
+₍^. .^₎⟆
+    </div>
+
+    <div class="socials">
+      <a href="https://instagram.com/armin.rhg" target="_blank" class="tooltip" onclick="copyText('armin.rhg')">
+        <i class="fab fa-instagram"></i><span class="tooltiptext">Copy Instagram ID</span>
+      </a>
+      <a href="https://discordapp.com/users/arminhe" target="_blank" class="tooltip" onclick="copyText('arminhe')">
+        <i class="fab fa-discord"></i><span class="tooltiptext">Copy Discord ID</span>
+      </a>
+      <a href="https://open.spotify.com/user/armin.rhg" target="_blank" class="tooltip" onclick="copyText('armin.rhg')">
+        <i class="fab fa-spotify"></i><span class="tooltiptext">Copy Spotify ID</span>
+      </a>
+      <a href="https://youtube.com/arminhe" target="_blank" class="tooltip" onclick="copyText('arminhe')">
+        <i class="fab fa-youtube"></i><span class="tooltiptext">Copy YouTube ID</span>
+      </a>
+      <a href="https://github.com/Arminart" target="_blank" class="tooltip" onclick="copyText('Arminart')">
+        <i class="fab fa-github"></i><span class="tooltiptext">Copy GitHub ID</span>
+      </a>
+      <a href="https://twitch.tv/Armin" target="_blank" class="tooltip" onclick="copyText('Armin')">
+        <i class="fab fa-twitch"></i><span class="tooltiptext">Copy Twitch ID</span>
+      </a>
+    </div>
+
+    <div id="copyMsg"></div>
+  </div>
+
+  <script>
+    function copyText(text) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+          const msg = document.getElementById('copyMsg');
+          msg.textContent = `"${text}" copied to clipboard!`;
+          setTimeout(() => {
+            msg.textContent = '';
+          }, 2000);
+        });
+      } else {
+        alert('Clipboard not supported.');
+      }
+    }
+  </script>
+</body>
+</html>
